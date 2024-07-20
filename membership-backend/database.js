@@ -1,5 +1,5 @@
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database(':memory:');
+const sqlite3 = require("sqlite3").verbose();
+const db = new sqlite3.Database(":memory:");
 
 db.serialize(() => {
   db.run(`CREATE TABLE users (
@@ -10,8 +10,12 @@ db.serialize(() => {
 
   db.run(`CREATE TABLE members (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT,
-    email TEXT
+    firstName TEXT,
+    middleName TEXT,
+    lastName TEXT,
+    idNumber INTEGER,
+    dateOfBirth TEXT,
+    photo BLOB
   )`);
 });
 
